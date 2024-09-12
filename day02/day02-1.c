@@ -33,5 +33,5 @@ int main()
 	else {
 		printf("올바른 값이 입력되지 않았습니다.");
 	}
-
+	return 0;
 }
