@@ -8,8 +8,16 @@ int main()
 	scanf_s("%c", &aw);
 	printf("\n숫자 1을 입력하세요 : ");
 	scanf_s("%lf", &a);
-	printf("\n숫자 2을 입력하세요 : ");
-	scanf_s("%lf", &b);
+	while (1) {
+		printf("\n숫자 2을 입력하세요 : ");
+		scanf_s("%lf", &b);
+		if (aw == '4' && b == 0) {
+			printf("0으로 나눌 수 없습니다.");
+		}
+		else {
+			break;
+		}
+	}
 	if (aw == '1') {
 		printf("\n%lf + %lf = %lf ", a, b, a + b);
 	}
