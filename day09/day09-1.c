@@ -34,7 +34,6 @@ void print_vector(struct vector p) { //입력받은 벡터를 출력하는 함수
 	printf("vector (%d,%d,%d)\n",p.x,p.y,p.z);
 }
 
-
 int main() {
 	int aw,sum;
 	struct vector p[2]; //벡터의 개수 2로 설정
@@ -60,30 +59,35 @@ int main() {
 	print_vector(p[0]); //입력받은 벡터 출력
 	print_vector(p[1]);
 
-	printf("1.백터의 합\n2.백터의 차\n3.백터의 외적\n4.백터의 내적\n5.종료\n"); //명령의 종류 출력
-	printf("명령입력 : ");
-	scanf_s("%d",&aw);
-	
-	if (aw == 1) { //사용자가 입력한 값에 따라 명령 수행
-		add(p[0], p[1]);
-		printf("백터의 합은 (%d, %d, %d)",x,y,z );
-	}else if (aw == 2) {
-		sub(p[0], p[1]);
-		printf("백터의 차는 (%d, %d, %d)", x, y, z);
-	}
-	else if (aw == 3) {
-		sum=in_s(p[0], p[1]);
-		printf("백터의 내적은 %d", sum);
-	}
-	else if (aw == 4) {
-		out_s(p[0], p[1]);
-		printf("백터의 외적은 (%d, %d, %d)", x, y, z);
-	}
-	else if (aw == 5) {
-		
-	}
-	else {
-		printf("옳지않은 입력입니다."); //지정된 값 이외의 값 입력시 안내문구 출력
+	printf("1.백터의 합\n2.백터의 차\n3.백터의 외적\n4.백터의 내적\n5.종료\n\n"); //명령의 종류 출력
+
+	while (1)
+	{
+		printf("명령입력 : ");
+		scanf_s("%d", &aw);
+		if (aw == 1) { //사용자가 입력한 값에 따라 명령 수행
+			add(p[0], p[1]);
+			printf("백터의 합은 (%d, %d, %d)", x, y, z);
+		}
+		else if (aw == 2) {
+			sub(p[0], p[1]);
+			printf("백터의 차는 (%d, %d, %d)", x, y, z);
+		}
+		else if (aw == 3) {
+			sum = in_s(p[0], p[1]);
+			printf("백터의 내적은 %d", sum);
+		}
+		else if (aw == 4) {
+			out_s(p[0], p[1]);
+			printf("백터의 외적은 (%d, %d, %d)", x, y, z);
+		}
+		else if (aw == 5) { //입력받은 값이 5일경우 break를 통해 반복 종료
+			break;
+		}
+		else {
+			printf("옳지않은 입력입니다."); //지정된 값 이외의 값 입력시 안내문구 출력
+		}
+		printf("\n\n");
 	}
 	printf("\n프로그램을 종료합니다"); //프로그램 종료 안내문구
 
